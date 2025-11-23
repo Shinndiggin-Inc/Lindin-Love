@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Lindin Love Freeze-Dried Foods</title>
+
+  <style>
+    /* --- Shared Lindin Theme --- */
+    :root {
+      --cream: #f6efe4;
+      --cream-deep: #e9dcc6;
+      --warm-gold: #d6a063;
+      --soft-gold: #deb588;
+      --rust: #b75c36;
+      --deep-brown: #3d2720;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-brown);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(246,239,228,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(214,160,99,0.35);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: .75rem 1.25rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { display: flex; align-items: center; gap: .6rem; }
+    .brand-logo {
+      width: 40px; height: 40px; border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffd7a1, #d38347);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .brand-text-main {
+      font-family: Georgia, serif; font-size: 1.05rem;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .brand-text-sub {
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .18em; color: var(--rust);
+    }
+
+    nav { display:flex; gap:1.5rem; }
+    nav a {
+      font-size:.9rem; text-transform:uppercase; letter-spacing:.14em;
+      padding-bottom:.1rem; position:relative;
+    }
+    nav a::after {
+      content:""; position:absolute; left:0; bottom:0; width:0; height:2px;
+      background:linear-gradient(90deg,var(--warm-gold),var(--rust));
+      border-radius:999px; transition:width .25s;
+    }
+    nav a:hover::after { width:100%; }
+
+    .nav-cta {
+      padding:.55rem 1rem; border-radius:999px;
+      border:1px solid rgba(183,92,54,.25);
+      background:linear-gradient(135deg,var(--soft-gold),var(--warm-gold));
+      color:#fff; text-transform:uppercase; letter-spacing:.16em;
+    }
+
+    .menu-toggle { display:none; background:none; border:none; font-size:1.4rem; }
+
+    .mobile-nav-overlay {
+      position:fixed; inset:0; display:none;
+      background:rgba(25,13,9,.86); z-index:30;
+      align-items:center; justify-content:center;
+    }
+    .mobile-nav-overlay.active { display:flex; }
+    .mobile-nav-panel {
+      background:rgba(246,239,228,.95);
+      padding:1.75rem 2rem; border-radius:1.2rem;
+      max-width:360px; text-align:center;
+    }
+    .mobile-nav-panel a { display:block; padding:.5rem 0; text-transform:uppercase; }
+
+    /* Content */
+    main {
+      max-width:860px; margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+    h1 {
+      font-family:Georgia, serif;
+      font-size:1.8rem;
+      margin-bottom:.5rem;
+    }
+    .section-intro {
+      max-width:36rem; margin-bottom:2rem; color:rgba(61,39,32,.85);
+    }
+    h2 {
+      font-family:Georgia, serif;
+      margin-top:2rem; margin-bottom:.5rem;
+      font-size:1.3rem;
+    }
+    p, li { font-size:.95rem; }
+
+    .policy-box {
+      background:var(--cream-deep);
+      padding:1.5rem 1.75rem;
+      border-radius:1rem;
+      border:1px solid rgba(214,160,99,0.45);
+      margin-bottom:2rem;
+    }
+
+    footer {
+      background:#f2e4d0;
+      padding:1.6rem 1.25rem;
+      border-top:1px solid rgba(214,160,99,0.4);
+      font-size:.78rem;
+      margin-top:3rem;
+    }
+    .footer-inner {
+      max-width:1080px; margin:0 auto;
+      display:flex; justify-content:space-between; flex-wrap:wrap;
+    }
+
+    @media(max-width:720px){
+      nav{display:none;} .menu-toggle{display:block;}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-logo">
+        <span style="font-family:Georgia; color:#fff; font-size:1.3rem;">L</span>
+      </div>
+      <div>
+        <div class="brand-text-main">Lindin Love</div>
+        <div class="brand-text-sub">Freeze-Dried Foods</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="about.html">Our Story</a>
+      <a href="faq.html">FAQ</a>
+      <a href="terms.html" class="nav-cta">Order</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <a href="index.html">Home</a>
+    <a href="flavors.html">Flavors</a>
+    <a href="about.html">Our Story</a>
+    <a href="faq.html">FAQ</a>
+    <a href="terms.html" class="nav-cta">Order</a>
+  </div>
+</div>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="section-intro">
+    Lindin Love Freeze-Dried Foods respects your privacy. This policy explains
+    what information we collect, how we use it, and how we protect it.
+  </p>
+
+  <div class="policy-box">
+    <h2>1. Information We Collect</h2>
+    <p>We collect minimal information. This may include:</p>
+    <ul>
+      <li>Your name and email address if you contact us directly.</li>
+      <li>Order details for custom or bulk requests.</li>
+      <li>General website traffic data (non-personal).</li>
+    </ul>
+
+    <h2>2. How We Use Your Information</h2>
+    <p>We use your information to:</p>
+    <ul>
+      <li>Respond to messages, questions, or order requests.</li>
+      <li>Prepare custom orders or communicate about your inquiry.</li>
+      <li>Improve our website and services.</li>
+    </ul>
+
+    <h2>3. Sharing Your Information</h2>
+    <p>
+      We do not sell or share your personal information with third parties,
+      except when necessary to complete an order (such as shipping).
+    </p>
+
+    <h2>4. Cookies & Analytics</h2>
+    <p>
+      Our website may use simple analytics tools to understand visitor traffic.
+      These tools collect non-identifiable information such as pages viewed or
+      browser type.
+    </p>
+
+    <h2>5. Data Security</h2>
+    <p>
+      We take reasonable steps to protect any information you share with us.
+      However, no website or email transmission is 100% secure.
+    </p>
+
+    <h2>6. Your Choices</h2>
+    <p>You may request:</p>
+    <ul>
+      <li>To review the information we have about you</li>
+      <li>To update or correct information</li>
+      <li>To request deletion of your information</li>
+    </ul>
+    <p>Just contact us by email.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>
+      Email us with any privacy questions or requests:<br>
+      <strong>info@lindinlove.com</strong>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuToggle").onclick = () => {
+    mobileNav.classList.toggle("active");
+  };
+  mobileNav.onclick = e => { if (e.target === mobileNav) mobileNav.classList.remove("active"); };
+</script>
+
+</body>
+</html>

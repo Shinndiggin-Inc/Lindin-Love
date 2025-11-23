@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions – Lindin Love Freeze-Dried Foods</title>
+
+  <style>
+    /* --- Shared Lindin Theme --- */
+    :root {
+      --cream: #f6efe4;
+      --cream-deep: #e9dcc6;
+      --warm-gold: #d6a063;
+      --soft-gold: #deb588;
+      --rust: #b75c36;
+      --deep-brown: #3d2720;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--cream);
+      color: var(--deep-brown);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(246,239,228,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(214,160,99,0.35);
+    }
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: .75rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand {
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .brand-logo {
+      width: 40px; height: 40px; border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffd7a1, #d38347);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .brand-text-main {
+      font-family: Georgia, serif; font-size: 1.05rem;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .brand-text-sub {
+      font-size:.75rem; text-transform: uppercase;
+      letter-spacing:.18em; color: var(--rust);
+    }
+    nav { display:flex; gap:1.5rem; }
+    nav a {
+      font-size:.9rem; text-transform:uppercase;
+      letter-spacing:.14em; padding-bottom:.1rem; position:relative;
+    }
+    nav a::after {
+      content:""; position:absolute; left:0; bottom:0;
+      width:0; height:2px; border-radius:999px;
+      background:linear-gradient(90deg,var(--warm-gold),var(--rust));
+      transition: width .25s;
+    }
+    nav a:hover::after { width:100%; }
+
+    .nav-cta {
+      padding:.55rem 1rem; border-radius:999px;
+      border:1px solid rgba(183,92,54,0.25);
+      background:linear-gradient(135deg,var(--soft-gold),var(--warm-gold));
+      color:#fff; text-transform:uppercase; letter-spacing:.16em;
+    }
+
+    .menu-toggle { display:none; background:none; border:none; font-size:1.4rem; }
+
+    .mobile-nav-overlay {
+      position:fixed; inset:0; display:none;
+      background:rgba(25,13,9,.86); z-index:30;
+      align-items:center; justify-content:center;
+    }
+    .mobile-nav-overlay.active { display:flex; }
+    .mobile-nav-panel {
+      background:rgba(246,239,228,.95);
+      padding:1.75rem 2rem;
+      border-radius:1.2rem;
+      max-width:360px; text-align:center;
+      box-shadow:0 18px 35px rgba(0,0,0,.35);
+    }
+    .mobile-nav-panel a { display:block; padding:.5rem 0; text-transform:uppercase; }
+
+    /* Content */
+    main {
+      max-width:860px; margin:0 auto;
+      padding:3rem 1.25rem 4rem;
+    }
+    h1 {
+      font-family:Georgia, serif;
+      font-size:1.8rem; margin-bottom:.5rem;
+    }
+    .section-intro {
+      max-width:36rem; margin-bottom:2rem;
+      color:rgba(61,39,32,.85);
+    }
+    h2 {
+      font-family:Georgia, serif;
+      font-size:1.3rem;
+      margin-top:2rem; margin-bottom:.5rem;
+    }
+    p, li { font-size:.95rem; }
+
+    .terms-box {
+      background:var(--cream-deep);
+      padding:1.5rem 1.75rem;
+      border-radius:1rem;
+      border:1px solid rgba(214,160,99,0.45);
+      margin-bottom:2rem;
+    }
+
+    footer {
+      background:#f2e4d0;
+      padding:1.6rem 1.25rem;
+      border-top:1px solid rgba(214,160,99,0.4);
+      font-size:.78rem;
+      margin-top:3rem;
+    }
+    .footer-inner {
+      max-width:1080px; margin:0 auto;
+      display:flex; justify-content:space-between; flex-wrap:wrap;
+    }
+
+    @media(max-width:720px){
+      nav{display:none;} .menu-toggle{display:block;}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-logo">
+        <span style="font-family:Georgia; color:#fff; font-size:1.3rem;">L</span>
+      </div>
+      <div>
+        <div class="brand-text-main">Lindin Love</div>
+        <div class="brand-text-sub">Freeze-Dried Foods</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="about.html">Our Story</a>
+      <a href="faq.html">FAQ</a>
+      <a href="terms.html" class="nav-cta">Order</a>
+    </nav>
+
+    <button id="menuToggle" class="menu-toggle">☰</button>
+  </div>
+</header>
+
+<div id="mobileNav" class="mobile-nav-overlay">
+  <div class="mobile-nav-panel">
+    <a href="index.html">Home</a>
+    <a href="flavors.html">Flavors</a>
+    <a href="about.html">Our Story</a>
+    <a href="faq.html">FAQ</a>
+    <a href="terms.html" class="nav-cta">Order</a>
+  </div>
+</div>
+
+<main>
+  <h1>Terms & Conditions</h1>
+  <p class="section-intro">
+    These Terms & Conditions describe how Lindin Love Freeze-Dried Foods handles
+    orders, cancellations, liability, and general use of this website.
+  </p>
+
+  <div class="terms-box">
+    <h2>1. General Information</h2>
+    <p>
+      By visiting this website or placing an order with Lindin Love Freeze-Dried Foods,
+      you agree to the following terms. Please review them carefully.
+    </p>
+
+    <h2>2. Products & Availability</h2>
+    <p>
+      All products are made in small batches. Availability may vary based on
+      inventory, seasonal ingredients, or production schedule.
+    </p>
+
+    <h2>3. Orders & Payments</h2>
+    <ul>
+      <li>Orders are considered confirmed once payment or agreement is finalized.</li>
+      <li>Custom or bulk orders may require partial payment upfront.</li>
+      <li>Pricing may vary based on quantity, ingredients, or special requests.</li>
+    </ul>
+
+    <h2>4. Cancellations & Refunds</h2>
+    <p>
+      Because our freeze-dried products are food items, all sales are generally final.
+      However, if there is an issue with your order, please contact us within 48 hours.
+    </p>
+    <p>
+      We will work with you to find a fair resolution. Refunds are handled on a
+      case-by-case basis.
+    </p>
+
+    <h2>5. Allergy & Ingredient Notice</h2>
+    <p>
+      Products may be processed on shared equipment. Customers are responsible
+      for reviewing all ingredient information and contacting us with questions.
+    </p>
+
+    <h2>6. Shipping & Local Pickup</h2>
+    <p>
+      If shipping becomes available, terms will be updated here. At this time,
+      most orders are delivered through local pickup or market sales.
+    </p>
+
+    <h2>7. Use of Website</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Copy, distribute, or misuse website content</li>
+      <li>Attempt to access areas of the site not intended for public use</li>
+      <li>Misrepresent yourself when contacting us or placing orders</li>
+    </ul>
+
+    <h2>8. Limitation of Liability</h2>
+    <p>
+      Lindin Love Freeze-Dried Foods is not responsible for damages arising from:
+    </p>
+    <ul>
+      <li>Improper storage after purchase</li>
+      <li>Allergies not disclosed to us</li>
+      <li>Misuse of products</li>
+    </ul>
+
+    <h2>9. Changes to These Terms</h2>
+    <p>
+      We may update these Terms & Conditions at any time. Updates will be posted
+      on this page with a revised date.
+    </p>
+
+    <h2>10. Contact Us</h2>
+    <p>
+      For questions about these terms, contact us:<br>
+      <strong>info@lindinlove.com</strong>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuToggle").onclick = () => {
+    mobileNav.classList.toggle("active");
+  };
+  mobileNav.onclick = e => {
+    if (e.target === mobileNav) mobileNav.classList.remove("active");
+  };
+</script>
+
+</body>
+</html>
