@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Lindin Love Freeze-Dried Foods</title>
+  <title>Order / Inquire – Lindin Love Freeze-Dried Foods</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -28,10 +28,10 @@
         <a href="ourstory.html">Our Story</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html" class="nav-cta">Order / Inquire</a>
+        <a href="contact.html" class="nav-cta active">Order / Inquire</a>
       </nav>
 
-      <button class="menu-toggle" id="menuToggle">☰</button>
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰</button>
     </div>
   </header>
 
@@ -54,10 +54,10 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-inner">
-      <div class="page-hero-eyebrow">Privacy Policy</div>
-      <h1 class="page-hero-title">Your Privacy Matters to Us</h1>
+      <div class="page-hero-eyebrow">Order / Inquire</div>
+      <h1 class="page-hero-title">Let’s Plan Your Next Crunch</h1>
       <p class="page-hero-subtitle">
-        We value your trust and are committed to protecting your personal information.
+        Markets, fundraisers, bulk orders, custom mixes — we’d love to help.
       </p>
     </div>
   </section>
@@ -65,55 +65,23 @@
 
   <main>
 
-    <!-- INTRO -->
-    <section>
-      <h2 class="section-heading">Information We Collect</h2>
-      <p class="section-intro">
-        We only collect information you voluntarily provide, such as your name,
-        email address, or order details when you contact us or place an inquiry.
-      </p>
-      <p>
-        We do not sell, rent, or share your personal information with third parties,
-        except as required to provide the services you request (for example,
-        shipping or payment processing if added in the future).
-      </p>
-    </section>
+    <!-- CONTACT STRIP -->
+    <section id="contact">
+      <div class="contact-strip">
+        <div>
+          <h3>Tell us what you're dreaming up.</h3>
+          <p>
+            Whether it's a party bundle, event order, or market pickup,
+            send us a message and we’ll get back to you with details & pricing.
+          </p>
+        </div>
 
-    <section>
-      <h2 class="section-heading">How We Use Your Information</h2>
-      <p>
-        We may use the information you provide to:
-      </p>
-      <ul>
-        <li>Respond to your inquiries or order requests</li>
-        <li>Send updates about your order or upcoming events (optional)</li>
-        <li>Improve our products and services</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-heading">Cookies & Tracking</h2>
-      <p>
-        At this time, Lindin Love does not use tracking cookies or analytics tools.
-        If this changes in the future, we will update this page to reflect it.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="section-heading">Data Protection</h2>
-      <p>
-        We take reasonable security measures to safeguard the information you share
-        with us. However, no online transmission is completely secure.
-      </p>
-      <p>
-        If you have concerns, please contact us directly.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="section-heading">Contact Us</h2>
-      <p>For any questions regarding this Privacy Policy, contact us at:</p>
-      <p><strong>Email:</strong> info@lindinlove.com</p>
+        <div>
+          <a href="mailto:info@lindinlove.com" class="btn-secondary">
+            Email Lindin Love
+          </a>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -126,7 +94,7 @@
 
       <div class="footer-links">
         <a href="#">Instagram</a>
-        <a href="privacy.html" class="active">Privacy</a>
+        <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
     </div>
@@ -146,11 +114,11 @@
       if (e.target === mobileNav) mobileNav.classList.remove("active");
     });
 
-    mobileNav.querySelectorAll("a").forEach((link) =>
+    mobileNav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () =>
         mobileNav.classList.remove("active")
-      )
-    );
+      );
+    });
 
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

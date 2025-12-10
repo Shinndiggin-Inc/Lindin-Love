@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story – Lindin Love Freeze-Dried Foods</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Upload/Assets/lindin-logo.jpg" alt="Lindin Love logo" />
+        </div>
+        <div>
+          <div class="brand-text-main">Lindin Love</div>
+          <div class="brand-text-sub">Freeze-Dried Foods</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="flavors.html">Flavors</a>
+        <a href="ourstory.html" class="active">Our Story</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <div class="mobile-nav-panel">
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="ourstory.html">Our Story</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      <div style="margin-top: .75rem; font-size: .75rem; color: rgba(61,39,32,.7);">
+        Farm-crafted, Colorado-made.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">Our Story</div>
+      <h1 class="page-hero-title">Our Family Journey</h1>
+      <p class="page-hero-subtitle">
+        How Lindin Love came to life — built with heart, teamwork, and a whole lot of crunch.
+      </p>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- FAMILY STORY -->
+    <section>
+      <div class="section-eyebrow">Our beginnings</div>
+      <h2 class="section-heading">
+        We are a family of five who dreamed of starting our own business.
+      </h2>
+
+      <p class="section-intro">
+        In 2023, we took a leap of faith and launched Lindin Love Freeze Dried Foods.
+        Along with offering our delicious products to our online followers, we were thrilled
+        to connect with our local community by selling our goods at craft fairs and pop-up shops.
+      </p>
+
+      <p>
+        Our very first craft fair took place in November 2023, and it was such a fun
+        experience that we immediately became passionate about it. The most rewarding
+        part of owning our business is working together as a family.
+      </p>
+
+      <p>
+        The name <strong>"Lindin"</strong> is a blend of letters from each of our children's names,
+        while <strong>"Love"</strong> reflects the love we share for each other and for the
+        products we create. We sincerely hope you’ll join us on the Lindin Love journey.
+      </p>
+    </section>
+
+
+    <!-- TWO COLUMN SECTION -->
+    <section>
+      <div class="about-grid">
+
+        <!-- LEFT COLUMN: FREEZE-DRYING EXPLANATION -->
+        <div class="about-card">
+          <h3>How the Freeze-Drying Process Works</h3>
+          <p>
+            Our freeze-drying machine is roughly the size of a mini-refrigerator and
+            features a large cylinder that holds several trays of candy or food.
+          </p>
+          <p>
+            The freeze-drying process occurs inside a vacuum chamber. First, the candy
+            is cooled to a very low temperature, freezing any moisture inside. Then a
+            gentle heating process begins, causing the moisture to evaporate while the
+            sugar expands — often changing texture and enhancing flavor.
+          </p>
+
+          <ul>
+            <li>Small-batch runs for quality control</li>
+            <li>Real ingredients you can pronounce</li>
+            <li>Perfect for snacking, topping, and gifting</li>
+          </ul>
+        </div>
+
+        <!-- RIGHT COLUMN: PHOTO PANEL -->
+        <div class="about-photo">
+          <div>
+            <div>“We wanted food that still tasted like home.”</div>
+            <div style="font-size: .85rem; opacity: .9; margin-top: .35rem;">
+              Add a family, kitchen, or market photo here.<br>
+              <strong>Upload/Assets/about-lindin.jpg</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- SCRIPT -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () => mobileNav.classList.toggle("active"));
+
+    mobileNav.addEventListener("click", (e) => {
+      if (e.target === mobileNav) mobileNav.classList.remove("active");
+    });
+
+    mobileNav.querySelectorAll("a").forEach((link) =>
+      link.addEventListener("click", () => mobileNav.classList.remove("active"))
+    );
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

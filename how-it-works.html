@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works – Lindin Love Freeze-Dried Foods</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Upload/Assets/lindin-logo.jpg" alt="Lindin Love logo" />
+        </div>
+        <div>
+          <div class="brand-text-main">Lindin Love</div>
+          <div class="brand-text-sub">Freeze-Dried Foods</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="flavors.html">Flavors</a>
+        <a href="ourstory.html">Our Story</a>
+        <a href="how-it-works.html" class="active">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <div class="mobile-nav-panel">
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="ourstory.html">Our Story</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      <div style="margin-top:.75rem;font-size:.75rem;color:rgba(61,39,32,.7);">
+        Farm-crafted, Colorado-made.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">How it works</div>
+      <h1 class="page-hero-title">From Freezer to Flavor</h1>
+      <p class="page-hero-subtitle">
+        What happens behind the scenes — from prep to market.
+      </p>
+    </div>
+  </section>
+
+
+  <main>
+
+    <section>
+      <div class="section-eyebrow">The Process</div>
+      <h2 class="section-heading">Farm to freeze-dryer to you.</h2>
+      <p class="section-intro">
+        Whether you’re grabbing a couple of bags at a local market or planning
+        bulk orders for an event, this is what happens behind the scenes.
+      </p>
+
+      <!-- STEPS GRID -->
+      <div class="steps">
+
+        <!-- STEP 1 -->
+        <div class="step">
+          <div class="step-number">Step 1</div>
+          <div class="step-title">Pick & prepare</div>
+          <div>
+            We wash, slice, and prep fruits or candies in small batches,
+            ready for the freeze dryer trays.
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step">
+          <div class="step-number">Step 2</div>
+          <div class="step-title">Freeze & dry</div>
+          <div>
+            The freeze-drying cycle slowly removes moisture while keeping
+            shape, color, and flavor intact.
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step">
+          <div class="step-number">Step 3</div>
+          <div class="step-title">Seal & label</div>
+          <div>
+            Each bag is sealed for freshness and labeled with flavor,
+            batch details, and best-by date.
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step">
+          <div class="step-number">Step 4</div>
+          <div class="step-title">Markets & orders</div>
+          <div>
+            You’ll find us at local markets, pop-ups, and through direct
+            pre-order — with custom options for events.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- SCRIPT -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () =>
+      mobileNav.classList.toggle("active")
+    );
+
+    mobileNav.addEventListener("click", (e) => {
+      if (e.target === mobileNav) mobileNav.classList.remove("active");
+    });
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileNav.classList.remove("active"));
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

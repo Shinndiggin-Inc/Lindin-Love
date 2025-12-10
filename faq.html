@@ -4,291 +4,255 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ – Lindin Love Freeze-Dried Foods</title>
-
-  <style>
-    /* --- Shared Lindin Theme --- */
-    :root {
-      --cream: #f6efe4;
-      --cream-deep: #e9dcc6;
-      --warm-gold: #d6a063;
-      --soft-gold: #deb588;
-      --rust: #b75c36;
-      --deep-brown: #3d2720;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--cream);
-      color: var(--deep-brown);
-      line-height: 1.6;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* Header */
-    header {
-      position: sticky; top: 0; z-index: 40;
-      background: rgba(246,239,228,0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(214,160,99,0.35);
-    }
-    .nav-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: .75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand { display: flex; align-items: center; gap: .6rem; }
-    .brand-logo {
-      width: 40px; height: 40px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffd7a1, #d38347);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .brand-text-main {
-      font-family: Georgia, serif;
-      font-size: 1.05rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .brand-text-sub {
-      font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      color: var(--rust);
-    }
-
-    nav { display: flex; gap: 1.5rem; }
-    nav a {
-      font-size: .9rem; text-transform: uppercase;
-      letter-spacing: .14em; padding-bottom: .1rem;
-      position: relative;
-    }
-    nav a::after {
-      content:""; position:absolute; left:0; bottom:0;
-      width:0; height:2px; border-radius:999px;
-      background:linear-gradient(90deg,var(--warm-gold),var(--rust));
-      transition: width .25s;
-    }
-    nav a:hover::after { width:100%; }
-
-    .nav-cta {
-      padding:.55rem 1rem; border-radius:999px;
-      border:1px solid rgba(183,92,54,0.25);
-      background:linear-gradient(135deg,var(--soft-gold),var(--warm-gold));
-      color:#fff; text-transform:uppercase; letter-spacing:.16em;
-    }
-
-    .menu-toggle { display:none; background:none; border:none; font-size:1.4rem; }
-
-    .mobile-nav-overlay {
-      position:fixed; inset:0; display:none;
-      background:rgba(25,13,9,.86); z-index:30;
-      align-items:center; justify-content:center;
-    }
-    .mobile-nav-overlay.active { display:flex; }
-    .mobile-nav-panel {
-      background:rgba(246,239,228,.95);
-      padding:1.75rem 2rem;
-      border-radius:1.2rem;
-      box-shadow:0 18px 35px rgba(0,0,0,.35);
-      text-align:center; max-width:360px;
-    }
-    .mobile-nav-panel a {
-      display:block; padding:.5rem 0;
-      text-transform:uppercase;
-    }
-
-    /* Page Content */
-    main {
-      max-width:1080px;
-      margin:0 auto;
-      padding:3rem 1.25rem 4rem;
-    }
-    .section-eyebrow {
-      font-size:.8rem;
-      text-transform:uppercase;
-      letter-spacing:.19em;
-      color:rgba(61,39,32,.7);
-      margin-bottom:.25rem;
-    }
-    .section-heading {
-      font-family:Georgia, serif;
-      font-size:1.8rem;
-      margin-bottom:.5rem;
-    }
-    .section-intro {
-      max-width:36rem;
-      font-size:.95rem;
-      margin-bottom:1.75rem;
-      color:rgba(61,39,32,.9);
-    }
-
-    /* FAQ Grid */
-    .faq-grid {
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap:1.4rem;
-    }
-    .faq-item {
-      background:var(--cream-deep);
-      border-radius:1rem;
-      padding:1.25rem 1.4rem;
-      border:1px solid rgba(214,160,99,0.45);
-    }
-    .faq-q {
-      font-weight:600;
-      margin-bottom:.4rem;
-      font-size:1rem;
-      font-family:Georgia, serif;
-    }
-    .faq-a {
-      font-size:.9rem;
-      color:rgba(61,39,32,.9);
-    }
-
-    /* Responsive */
-    @media(max-width:900px){
-      .faq-grid {
-        grid-template-columns:1fr;
-      }
-    }
-    @media(max-width:720px){
-      nav{display:none;} .menu-toggle{display:block;}
-    }
-
-    footer {
-      background:#f2e4d0;
-      padding:1.6rem 1.25rem;
-      border-top:1px solid rgba(214,160,99,0.4);
-      font-size:.78rem;
-      margin-top:3rem;
-    }
-    .footer-inner {
-      max-width:1080px;
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-<header>
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="brand-logo">
-        <span style="font-family:Georgia; font-size:1.3rem; color:#fff;">L</span>
-      </div>
-      <div>
-        <div class="brand-text-main">Lindin Love</div>
-        <div class="brand-text-sub">Freeze-Dried Foods</div>
-      </div>
-    </div>
 
-    <nav>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Upload/Assets/lindin-logo.jpg" alt="Lindin Love logo" />
+        </div>
+        <div>
+          <div class="brand-text-main">Lindin Love</div>
+          <div class="brand-text-sub">Freeze-Dried Foods</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="flavors.html">Flavors</a>
+        <a href="ourstory.html">Our Story</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <div class="mobile-nav-panel">
       <a href="index.html">Home</a>
       <a href="flavors.html">Flavors</a>
-      <a href="about.html">Our Story</a>
+      <a href="ourstory.html">Our Story</a>
+      <a href="how-it-works.html">How It Works</a>
       <a href="faq.html">FAQ</a>
-      <a href="terms.html" class="nav-cta">Order</a>
-    </nav>
-
-    <button id="menuToggle" class="menu-toggle">☰</button>
-  </div>
-</header>
-
-<div id="mobileNav" class="mobile-nav-overlay">
-  <div class="mobile-nav-panel">
-    <a href="index.html">Home</a>
-    <a href="flavors.html">Flavors</a>
-    <a href="about.html">Our Story</a>
-    <a href="faq.html">FAQ</a>
-    <a href="terms.html" class="nav-cta">Order</a>
-  </div>
-</div>
-
-<main>
-  <div class="section-eyebrow">Questions</div>
-  <h1 class="section-heading">Frequently Asked Questions</h1>
-  <p class="section-intro">
-    These are the most common questions we get at markets, events, and online.
-    You can replace or expand them as your business grows.
-  </p>
-
-  <div class="faq-grid">
-    <div class="faq-item">
-      <div class="faq-q">How long do freeze-dried foods last?</div>
-      <div class="faq-a">
-        Properly sealed, most of our products stay fresh 12–18 months. Fruits
-        can last even longer if stored in a cool, dry place.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Do you ship?</div>
-      <div class="faq-a">
-        This depends on your final workflow. You can update this answer later.
-        For now, we recommend stating where you sell (local markets, pop-ups,
-        direct order pickup, etc.).
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Do you take custom or bulk orders?</div>
-      <div class="faq-a">
-        Yes! Perfect for parties, events, weddings, teacher gifts, and
-        fundraisers. Email us with your idea — we’ll work with your theme.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Are your products allergy-friendly?</div>
-      <div class="faq-a">
-        Please update this with your actual allergy statement (e.g. whether
-        your equipment processes nuts, dairy, etc.). Transparency keeps
-        customers safe and confident.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">What is freeze-drying?</div>
-      <div class="faq-a">
-        Freeze-drying removes water using cold + vacuum instead of heat.
-        This preserves color, flavor, and nutrients better than dehydrating.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Does freeze-dried candy taste different?</div>
-      <div class="faq-a">
-        Yes — most candies expand, crack open, and become airy with intense
-        flavor. Many customers prefer the freeze-dried versions!
+      <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      <div style="margin-top:.75rem;font-size:.75rem;color:rgba(61,39,32,.7);">
+        Farm-crafted, Colorado-made.
       </div>
     </div>
   </div>
-</main>
 
-<footer>
-  <div class="footer-inner">
-    <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">Questions</div>
+      <h1 class="page-hero-title">Frequently Asked Questions</h1>
+      <p class="page-hero-subtitle">
+        Answers to the questions we get asked at markets, events, and online.
+      </p>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-  const mobileNav = document.getElementById("mobileNav");
-  document.getElementById("menuToggle").onclick = () => {
-    mobileNav.classList.toggle("active");
-  };
-  mobileNav.onclick = e => { if (e.target === mobileNav) mobileNav.classList.remove("active"); };
-</script>
+  <main>
+
+    <!-- INTRO -->
+    <section>
+      <p class="section-intro">
+        As we continue to grow, we’ll keep adding more questions based on customer feedback.
+      </p>
+
+      <!-- ==========================
+           STORAGE & PRODUCT QUALITY
+           ========================== -->
+      <h2 class="faq-category">Storage & Product Quality</h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">❄️</span>
+            How long do your freeze-dried foods last?
+          </button>
+          <div class="faq-a">
+            When sealed and stored in a cool, dry place, most items maintain peak flavor
+            and crunch for 12–18 months. Keep the bag sealed between snacking for best results.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">⚠️</span>
+            Are your products allergy friendly?
+          </button>
+          <div class="faq-a">
+            Ingredients vary by flavor. Some candies may contain dairy, soy, nuts, or gluten.
+            Products may be prepared near shared equipment. Contact us if you have specific allergy concerns.
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==========================
+           SHIPPING
+           ========================== -->
+      <h2 class="faq-category">Shipping</h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">📦</span>
+            Do you ship?
+          </button>
+          <div class="faq-a">
+            We currently focus on local pickup and events, but shipping may become available soon.
+            If you're outside Colorado, feel free to ask — we’ll confirm availability.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">🌍</span>
+            Do you ship internationally?
+          </button>
+          <div class="faq-a">
+            Not yet, but we hope to expand to international shipping in the future.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">⏱️</span>
+            What is the standard shipping timeframe?
+          </button>
+          <div class="faq-a">
+            Orders generally ship within 2 days. Larger or out-of-stock orders may require
+            more time, and we’ll always update you if there's a delay.
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==========================
+           ORDERS & RETURNS
+           ========================== -->
+      <h2 class="faq-category">Orders</h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">🛍️</span>
+            Do you take custom or bulk orders?
+          </button>
+          <div class="faq-a">
+            Yes! We offer custom bundles for weddings, birthdays, teacher gifts,
+            fundraisers, and more. Use the Order / Inquire page to tell us what you're planning.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">🎁</span>
+            Do you offer party favors or treat bags?
+          </button>
+          <div class="faq-a">
+            Absolutely. We offer smaller portion bags at reduced event pricing.
+            Pricing varies by candy type—contact us for detailed event options.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">↩️</span>
+            Can I return items I no longer want?
+          </button>
+          <div class="faq-a">
+            Because of the nature of freeze-dried foods, returns aren’t accepted.
+            If there’s any issue with your order, please contact us — we’ll make it right.
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==========================
+           GENERAL
+           ========================== -->
+      <h2 class="faq-category">General</h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span class="faq-icon">📍</span>
+            Where is Lindin Love Freeze-Dried Foods located?
+          </button>
+          <div class="faq-a">
+            We’re located just outside Denver, Colorado, crafting freeze-dried treats for families,
+            events, and local markets throughout the Front Range.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () =>
+      mobileNav.classList.toggle("active")
+    );
+
+    mobileNav.addEventListener("click", (e) => {
+      if (e.target === mobileNav) mobileNav.classList.remove("active");
+    });
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileNav.classList.remove("active"));
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+  <!-- FAQ ACCORDION SCRIPT -->
+  <script>
+    document.querySelectorAll(".faq-q").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
 </body>
 </html>

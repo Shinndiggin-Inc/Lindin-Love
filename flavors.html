@@ -4,311 +4,222 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flavors – Lindin Love Freeze-Dried Foods</title>
-
-  <style>
-    /* --- Shared Lindin Theme (Same as index.html) --- */
-    :root {
-      --cream: #f6efe4;
-      --cream-deep: #e9dcc6;
-      --warm-gold: #d6a063;
-      --soft-gold: #deb588;
-      --rust: #b75c36;
-      --deep-brown: #3d2720;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--cream);
-      color: var(--deep-brown);
-      line-height: 1.6;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* Header */
-    header {
-      position: sticky; top: 0; z-index: 40;
-      background: rgba(246,239,228,0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(214,160,99,0.35);
-    }
-    .nav-inner {
-      max-width: 1080px; margin: 0 auto;
-      padding: .75rem 1.25rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .brand { display: flex; align-items: center; gap: .6rem; }
-    .brand-logo {
-      width: 40px; height: 40px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffd7a1, #d38347);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .brand-text-main {
-      font-family: Georgia, serif; font-size: 1.05rem;
-      letter-spacing: .08em; text-transform: uppercase;
-    }
-    .brand-text-sub {
-      font-size: .75rem; text-transform: uppercase;
-      letter-spacing: .18em; color: var(--rust);
-    }
-
-    nav { display: flex; gap: 1.5rem; }
-    nav a {
-      font-size: .9rem; text-transform: uppercase;
-      letter-spacing: .14em; padding-bottom: .1rem; position: relative;
-    }
-    nav a::after {
-      content:""; position:absolute; left:0; bottom:0;
-      width:0; height:2px; border-radius:999px;
-      background:linear-gradient(90deg,var(--warm-gold),var(--rust));
-      transition: width .25s;
-    }
-    nav a:hover::after { width:100%; }
-
-    .nav-cta {
-      padding:.55rem 1rem; border-radius:999px;
-      border:1px solid rgba(183,92,54,0.25);
-      background:linear-gradient(135deg,var(--soft-gold),var(--warm-gold));
-      color:#fff; text-transform:uppercase; letter-spacing:.16em;
-    }
-
-    .menu-toggle { display:none; background:none; border:none; font-size:1.4rem; }
-
-    .mobile-nav-overlay {
-      position:fixed; inset:0; display:none;
-      background:rgba(25,13,9,.86); z-index:30;
-      align-items:center; justify-content:center;
-    }
-    .mobile-nav-overlay.active { display:flex; }
-    .mobile-nav-panel {
-      background:rgba(246,239,228,.95);
-      padding:1.75rem 2rem; border-radius:1.2rem;
-      box-shadow:0 18px 35px rgba(0,0,0,.35);
-      text-align:center; max-width:360px;
-    }
-    .mobile-nav-panel a { display:block; padding:.5rem 0; text-transform:uppercase; }
-
-    /* Page Content */
-    main {
-      max-width:1080px; margin:0 auto;
-      padding:3rem 1.25rem 4rem;
-    }
-    .section-eyebrow {
-      font-size:.8rem; text-transform:uppercase;
-      letter-spacing:.19em; color:rgba(61,39,32,.7);
-      margin-bottom:.25rem;
-    }
-    .section-heading {
-      font-family:Georgia, serif; font-size:1.8rem;
-      margin-bottom:.5rem;
-    }
-    .section-intro {
-      max-width:36rem; font-size:.95rem;
-      margin-bottom:1.75rem;
-      color:rgba(61,39,32,.9);
-    }
-
-    /* Grid */
-    .grid-3 {
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:1.5rem;
-    }
-    .product-card {
-      background:#f8f0e2;
-      border-radius:1.2rem;
-      padding:1.25rem;
-      border:1px solid rgba(214,160,99,0.5);
-      display:flex; flex-direction:column;
-    }
-    .product-tag {
-      font-size:.72rem; text-transform:uppercase;
-      letter-spacing:.14em; color:rgba(61,39,32,.85);
-    }
-    .product-name {
-      font-family:Georgia, serif; font-size:1.1rem;
-      margin:.25rem 0 .4rem;
-    }
-    .product-note {
-      font-size:.85rem; color:rgba(61,39,32,.9);
-    }
-    .product-meta {
-      margin-top:.75rem; font-size:.78rem;
-      display:flex; justify-content:space-between;
-      opacity:.9;
-    }
-    .pill {
-      padding:.22rem .6rem; border-radius:999px;
-      background:rgba(183,92,54,0.08);
-      border:1px solid rgba(183,92,54,0.4);
-      text-transform:uppercase; letter-spacing:.14em;
-    }
-
-    footer {
-      background:#f2e4d0; padding:1.6rem 1.25rem;
-      border-top:1px solid rgba(214,160,99,0.4);
-      font-size:.78rem; margin-top:3rem;
-    }
-    .footer-inner {
-      max-width:1080px; margin:0 auto;
-      display:flex; justify-content:space-between; flex-wrap:wrap;
-    }
-
-    @media(max-width:900px){
-      .grid-3 { grid-template-columns: repeat(2,1fr); }
-    }
-    @media(max-width:720px){
-      nav{display:none;} .menu-toggle{display:block;}
-      .grid-3 { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-<header>
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="brand-logo">
-        <span style="font-family:Georgia; font-size:1.3rem; color:#fff;">L</span>
-      </div>
-      <div>
-        <div class="brand-text-main">Lindin Love</div>
-        <div class="brand-text-sub">Freeze-Dried Foods</div>
-      </div>
-    </div>
 
-    <nav>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Upload/Assets/lindin-logo.jpg" alt="Lindin Love logo" />
+        </div>
+        <div>
+          <div class="brand-text-main">Lindin Love</div>
+          <div class="brand-text-sub">Freeze-Dried Foods</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="flavors.html" class="active">Flavors</a>
+        <a href="ourstory.html">Our Story</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <div class="mobile-nav-panel">
       <a href="index.html">Home</a>
       <a href="flavors.html">Flavors</a>
-      <a href="about.html">Our Story</a>
+      <a href="ourstory.html">Our Story</a>
+      <a href="how-it-works.html">How It Works</a>
       <a href="faq.html">FAQ</a>
-      <a href="terms.html" class="nav-cta">Order</a>
-    </nav>
-
-    <button id="menuToggle" class="menu-toggle">☰</button>
+      <a href="contact.html" class="nav-cta">Order / Inquire</a>
+      <div style="margin-top: 0.75rem; font-size: 0.75rem; color: rgba(61,39,32,.7);">
+        Farm-crafted, Colorado-made.
+      </div>
+    </div>
   </div>
-</header>
 
-<div id="mobileNav" class="mobile-nav-overlay">
-  <div class="mobile-nav-panel">
-    <a href="index.html">Home</a>
-    <a href="flavors.html">Flavors</a>
-    <a href="about.html">Our Story</a>
-    <a href="faq.html">FAQ</a>
-    <a href="terms.html" class="nav-cta">Order</a>
-  </div>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">Flavors</div>
+      <h1 class="page-hero-title">Explore Our Flavors</h1>
+      <p class="page-hero-subtitle">
+        Freeze-dried candies crafted with love — crunchy, flavorful, and unforgettable.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <section>
+      <div class="section-eyebrow">Available Now</div>
+      <h2 class="section-heading">What We Have In Stock</h2>
+      <p class="section-intro">
+        Our current market lineup — small-batch, hand-crafted, and always rotating.
+      </p>
+
+<!-- PRODUCT GRID -->
+<div class="grid-3">
+
+  <!-- 1 Skitties -->
+  <article class="product-card">
+    <div class="product-tag">Candy</div>
+    <div class="product-name">Skitties</div>
+    <div class="product-note">
+      Bursting with intensified fruit flavor and a light airy crunch.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/skitties.jpg</span>
+    </div>
+  </article>
+
+  <!-- 2 Happy Ranchers -->
+  <article class="product-card">
+    <div class="product-tag">Candy</div>
+    <div class="product-name">Happy Ranchers</div>
+    <div class="product-note">
+      A crunchy twist on a classic hard candy — bold, bright, and fruity.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/happy-ranchers.jpg</span>
+    </div>
+  </article>
+
+  <!-- 3 Saltwater Taffy -->
+  <article class="product-card">
+    <div class="product-tag">Candy</div>
+    <div class="product-name">Saltwater Taffy Assortment</div>
+    <div class="product-note">
+      Light, melt-in-your-mouth taffy bites with a satisfying crisp.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/taffy.jpg</span>
+    </div>
+  </article>
+
+  <!-- 4 Air Puffs -->
+  <article class="product-card">
+    <div class="product-tag">Candy</div>
+    <div class="product-name">Air Puffs</div>
+    <div class="product-note">
+      Soft candies transformed into airy, crunchy, cloud-like pieces.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/air-puffs.jpg</span>
+    </div>
+  </article>
+
+  <!-- 5 Gremlin Eyes -->
+  <article class="product-card">
+    <div class="product-tag">Limited</div>
+    <div class="product-name">Gremlin Eyes (Caramel Apple Pops)</div>
+    <div class="product-note">
+      A seasonal favorite—sweet caramel and green apple with a crispy twist.
+    </div>
+    <div class="product-meta">
+      <span class="pill">LIMITED</span>
+      <span>Upload/Gallery/gremlin-eyes.jpg</span>
+    </div>
+  </article>
+
+  <!-- 6 Love Duds -->
+  <article class="product-card">
+    <div class="product-tag">Candy</div>
+    <div class="product-name">Love Duds</div>
+    <div class="product-note">
+      Rich chocolate and caramel turned into the crunchiest version ever.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/love-duds.jpg</span>
+    </div>
+  </article>
+
+  <!-- 7 Gummy Clusters -->
+  <article class="product-card">
+    <div class="product-tag">Candy</div>
+    <div class="product-name">Gummy Clusters</div>
+    <div class="product-note">
+      A wild explosion of fruity crunch—always a best seller.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/gummy-clusters.jpg</span>
+    </div>
+  </article>
+
+  <!-- 8 Cinnamon Drops -->
+  <article class="product-card">
+    <div class="product-tag">Candy</div>
+    <div class="product-name">Cinnamon Drops</div>
+    <div class="product-note">
+      Spicy, sweet, warm cinnamon candies with a crisp punch.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/cinnamon-drops.jpg</span>
+    </div>
+  </article>
+
+  <!-- 9 Marshmallows -->
+  <article class="product-card">
+    <div class="product-tag">Marshmallow</div>
+    <div class="product-name">Marshmallows</div>
+    <div class="product-note">
+      Puffy, crunchy vanilla marshmallows — perfect for cocoa or snacking.
+    </div>
+    <div class="product-meta">
+      <span>Upload/Gallery/marshmallows.jpg</span>
+    </div>
+  </article>
+
 </div>
 
-<main>
-  <div class="section-eyebrow">Flavors</div>
-  <h1 class="section-heading">Customer favorites & seasonal specialties</h1>
-  <p class="section-intro">
-    From farm-fresh fruits to candy classics, all of our freeze-dried treats
-    are made in small batches to keep flavor bold and texture perfect.
-  </p>
 
-  <div class="grid-3">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <div class="product-tag">Fruit Mix</div>
-      <div class="product-name">Homestead Harvest Mix</div>
-      <div class="product-note">
-        A blend of strawberries, peaches, and bananas — crunchy, light,
-        and perfect for yogurt, oatmeal, or snacking straight from the bag.
       </div>
-      <div class="product-meta">
-        <span class="pill">Sampler Ready</span>
-        <span>fruit-mix.jpg</span>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
+
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
       </div>
     </div>
+  </footer>
 
-    <!-- Product 2 -->
-    <div class="product-card">
-      <div class="product-tag">Candy</div>
-      <div class="product-name">Barn Loft Bites</div>
-      <div class="product-note">
-        Freeze-dried candies with a wild airy crunch and bright,
-        concentrated flavor. A farmers market staple.
-      </div>
-      <div class="product-meta">
-        <span class="pill">Best Seller</span>
-        <span>candy.jpg</span>
-      </div>
-    </div>
+  <!-- SCRIPT -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
 
-    <!-- Product 3 -->
-    <div class="product-card">
-      <div class="product-tag">Seasonal</div>
-      <div class="product-name">Harvest Crunch Series</div>
-      <div class="product-note">
-        Seasonal offerings like apple pie bites, pumpkin spice puffs,
-        holiday berry mix, and more.
-      </div>
-      <div class="product-meta">
-        <span class="pill">Limited Runs</span>
-        <span>seasonal.jpg</span>
-      </div>
-    </div>
+    menuToggle.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+    });
 
-    <!-- Product 4 -->
-    <div class="product-card">
-      <div class="product-tag">Fruit</div>
-      <div class="product-name">Rustic Strawberry Crunch</div>
-      <div class="product-note">
-        Pure strawberries — nothing added, just crisp farm flavor.
-      </div>
-      <div class="product-meta">
-        <span class="pill">Single Ingredient</span>
-        <span>strawberry.jpg</span>
-      </div>
-    </div>
+    mobileNav.addEventListener("click", (e) => {
+      if (e.target === mobileNav) mobileNav.classList.remove("active");
+    });
 
-    <!-- Product 5 -->
-    <div class="product-card">
-      <div class="product-tag">Candy</div>
-      <div class="product-name">Prairie Puffs</div>
-      <div class="product-note">
-        Freeze-dried marshmallow treats with a cloud-like crunch.
-      </div>
-      <div class="product-meta">
-        <span class="pill">Fan Favorite</span>
-        <span>marshmallow.jpg</span>
-      </div>
-    </div>
+    mobileNav.querySelectorAll("a").forEach((link) =>
+      link.addEventListener("click", () => mobileNav.classList.remove("active"))
+    );
 
-    <!-- Product 6 -->
-    <div class="product-card">
-      <div class="product-tag">Fruit</div>
-      <div class="product-name">Golden Peach Slices</div>
-      <div class="product-note">
-        Sweet Colorado peaches freeze-dried to lock in bright golden flavor.
-      </div>
-      <div class="product-meta">
-        <span class="pill">Seasonal Peak</span>
-        <span>peach.jpg</span>
-      </div>
-    </div>
-  </div>
-</main>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-<footer>
-  <div class="footer-inner">
-    <div>© <span id="year"></span> Lindin Love Freeze-Dried Foods.</div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-  const mobileNav = document.getElementById("mobileNav");
-  document.getElementById("menuToggle").onclick = () => {
-    mobileNav.classList.toggle("active");
-  };
-  mobileNav.onclick = e => { if (e.target === mobileNav) mobileNav.classList.remove("active"); };
-</script>
 </body>
 </html>
